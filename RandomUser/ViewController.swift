@@ -8,18 +8,75 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-
+class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+    
+     var randomUsers = [User]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        provisionalDummyUser()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
-
-
+    
+    func tableView(_ tableView:UITableView, numberOfRowsInSection section:Int) -> Int
+    {
+        return randomUsers.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
+    {
+        let cell:UITableViewCell=UITableViewCell(style: UITableViewCellStyle.subtitle, reuseIdentifier: "mycell")
+        cell.textLabel?.text  = randomUsers[indexPath.row].name
+        
+        return cell
+    }
+    
+    //To-Do: Change for the api call
+    func provisionalDummyUser() {
+        
+        let calendar = Calendar.current
+        
+        var components = DateComponents()
+        
+        components.day = 25
+        components.month = 1
+        components.year = 2011
+        components.hour = 2
+        components.minute = 15
+        
+        let newDate = calendar.date(from: components)
+        
+        let location = Location.init(street: "Diputacio", city: "Barcelona", state: "Spain")
+        let user1 = User.init(name: "Ana",
+                      surname: "Rebollo",
+                      email: "ana.rebollo.pin@gmail.com",
+                      picture: "hola",
+                      phone: "675443322",
+                      gender: "female" ,
+                      registerDate: newDate,
+                      location: location)
+        let user2 = User.init(name: "Jaime",
+                         surname: "Rebollo",
+                         email: "jaime.rebollo.pin@gmail.com",
+                         picture: "hola",
+                         phone: "675443322",
+                         gender: "female",
+                         registerDate: newDate,
+                         location: location)
+        let user3 = User.init(name: "Paco",
+                         surname: "Sanchez",
+                         email: "paco.sanchez@gmail.com",
+                         picture: "hola",
+                         phone: "675443322",
+                         gender: "female" ,
+                         registerDate: newDate,
+                         location: location)
+        randomUsers.append(user1)
+        randomUsers.append(user2)
+        randomUsers.append(user3)
+    }
 }
 
