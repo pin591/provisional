@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		926B7876211E143C0057EDA9 /* CustomUICell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926B7875211E143C0057EDA9 /* CustomUICell.swift */; };
 		92F336EE211DC87800D18CC7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F336ED211DC87800D18CC7 /* AppDelegate.swift */; };
 		92F336F0211DC87800D18CC7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F336EF211DC87800D18CC7 /* ViewController.swift */; };
 		92F336F3211DC87800D18CC7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92F336F1211DC87800D18CC7 /* Main.storyboard */; };
@@ -37,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		926B7875211E143C0057EDA9 /* CustomUICell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomUICell.swift; sourceTree = "<group>"; };
 		92F336EA211DC87800D18CC7 /* RandomUser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RandomUser.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		92F336ED211DC87800D18CC7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		92F336EF211DC87800D18CC7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -80,6 +82,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		926B7874211E141D0057EDA9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				92F336EF211DC87800D18CC7 /* ViewController.swift */,
+				926B7875211E143C0057EDA9 /* CustomUICell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		92F336E1211DC87800D18CC7 = {
 			isa = PBXGroup;
 			children = (
@@ -103,9 +114,9 @@
 		92F336EC211DC87800D18CC7 /* RandomUser */ = {
 			isa = PBXGroup;
 			children = (
+				926B7874211E141D0057EDA9 /* View */,
 				92F33722211DCC5200D18CC7 /* Model */,
 				92F336ED211DC87800D18CC7 /* AppDelegate.swift */,
-				92F336EF211DC87800D18CC7 /* ViewController.swift */,
 				92F336F1211DC87800D18CC7 /* Main.storyboard */,
 				92F336F7211DC87B00D18CC7 /* Assets.xcassets */,
 				92F336F9211DC87B00D18CC7 /* LaunchScreen.storyboard */,
@@ -273,6 +284,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				926B7876211E143C0057EDA9 /* CustomUICell.swift in Sources */,
 				92F3371F211DC8C000D18CC7 /* User.swift in Sources */,
 				92F336F6211DC87800D18CC7 /* RandomUser.xcdatamodeld in Sources */,
 				92F33721211DCAD700D18CC7 /* Location.swift in Sources */,
