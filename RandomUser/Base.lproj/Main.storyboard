@@ -84,6 +84,7 @@
                                             <outlet property="email" destination="SDj-b7-TMY" id="42R-La-snF"/>
                                             <outlet property="name" destination="np0-YA-5WS" id="JH4-nf-eP5"/>
                                             <outlet property="phone" destination="wth-GY-SF9" id="ojg-Ks-F2p"/>
+                                            <outlet property="picture" destination="C9p-VR-ryw" id="dXV-IG-UDw"/>
                                             <outlet property="surname" destination="T9p-kg-Lqg" id="2TZ-W3-VWe"/>
                                         </connections>
                                     </tableViewCell>

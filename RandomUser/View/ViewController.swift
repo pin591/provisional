@@ -29,8 +29,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
         let cell = tableView.dequeueReusableCell(withIdentifier: "myCell", for: indexPath) as! CustomUICell
-        cell.textLabel?.text  = randomUsers[indexPath.row].name
-        
+        cell.printCell(user: randomUsers[indexPath.row])        
         return cell
     }
     
