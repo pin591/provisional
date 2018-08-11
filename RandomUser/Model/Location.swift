@@ -8,11 +8,11 @@
 
 import Foundation
 
-class Location {
+struct Location: Hashable {
     
-    var street: String!
-    var city: String!
-    var state: String!
+    var street: String
+    var city: String
+    var state: String
     
     init(street: String, city: String, state: String) {
         self.street = street

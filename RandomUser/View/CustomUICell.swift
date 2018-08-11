@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class CustomUICell: UITableViewCell {
     
@@ -21,5 +22,7 @@ class CustomUICell: UITableViewCell {
         surname.text = user.surname
         email.text = user.email
         phone.text = user.phone
+        let url = URL(string: user.picture)!
+        picture.kf.setImage(with: url)
     }
 }
