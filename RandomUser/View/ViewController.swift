@@ -12,6 +12,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     @IBOutlet weak var tableView: UITableView!
     var randomUsers = Set<User>()
+    var selectedUser: User?
     
     var url = URL(string: "https://api.randomuser.me/?results=40")!
     lazy var configuration: URLSessionConfiguration = URLSessionConfiguration.default
@@ -22,7 +23,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     override func viewDidLoad() {
         super.viewDidLoad()
         downloadJSONFromURL(_completion: { (data) in })
-        //provisionalDummyUser()
     }
 
     override func didReceiveMemoryWarning() {
@@ -42,50 +42,28 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         return cell
     }
     
-    //To-Do: Change for the api call
-    /*func provisionalDummyUser() {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let position = randomUsers.index(randomUsers.startIndex, offsetBy: indexPath.row)
+        selectedUser = randomUsers[position]
+        let detailVC = storyboard?.instantiateViewController(withIdentifier: "detailVC") as! DetailViewController
+        detailVC.user = selectedUser
+        navigationController?.pushViewController(detailVC, animated: false)
+    }
+    
+    func mapDTOInModel(user:RandomAPIUser) {
+        let currentUser = User(name: user.name.first, surname: user.name.last,
+                            email: user.email, picture: user.picture.medium.absoluteString,
+                            phone: user.cell, gender: user.gender,
+                            registerDate: user.registered.date,
+                            location: Location(street: user.location.street,
+                                               city: user.location.city,
+                                               state: user.location.state))
         
-        let calendar = Calendar.current
-        
-        var components = DateComponents()
-        
-        components.day = 25
-        components.month = 1
-        components.year = 2011
-        components.hour = 2
-        components.minute = 15
-        
-        let newDate = calendar.date(from: components)
-        
-        let location = Location.init(street: "Diputacio", city: "Barcelona", state: "Spain")
-        let user1 = User.init(name: "Ana",
-                      surname: "Rebollo",
-                      email: "ana.rebollo.pin@gmail.com",
-                      picture: "hola",
-                      phone: "675443322",
-                      gender: "female" ,
-                      registerDate: newDate,
-                      location: location)
-        let user2 = User.init(name: "Jaime",
-                         surname: "Rebollo",
-                         email: "jaime.rebollo.pin@gmail.com",
-                         picture: "hola",
-                         phone: "675443322",
-                         gender: "female",
-                         registerDate: newDate,
-                         location: location)
-        let user3 = User.init(name: "Paco",
-                         surname: "Sanchez",
-                         email: "paco.sanchez@gmail.com",
-                         picture: "hola",
-                         phone: "675443322",
-                         gender: "female" ,
-                         registerDate: newDate,
-                         location: location)
-        randomUsers.append(user1)
-        randomUsers.append(user2)
-        randomUsers.append(user3)
-    }*/
+        self.randomUsers.insert(currentUser)
+        DispatchQueue.main.async { [unowned self] in
+            self.tableView.reloadData()
+        }
+    }
     
     func downloadJSONFromURL(_completion: @escaping JSONDictionaryHandler)
     {
@@ -100,13 +78,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                             do {
                                 let callResult = try JSONDecoder().decode(RandomAPIResult.self, from:data)
                                 for user in callResult.results {
-                                    let currentUser = User(name: user.name.first, surname: user.name.last, email: user.email, picture: user.picture.thumbnail.absoluteString, phone: user.cell, gender: user.gender, registerDate: user.registered.date, location: Location(street: user.location.street, city: user.location.city, state: user.location.state))
-                                   
-                                    self.randomUsers.insert(currentUser)
-                                    DispatchQueue.main.async { [unowned self] in
-                                        self.tableView.reloadData()
-                                        print(user)
-                                    }
+                                    self.mapDTOInModel(user: user)
                                 }
                             } catch let error as NSError {
                                 print ("Error processing json data: \(error.description)")
