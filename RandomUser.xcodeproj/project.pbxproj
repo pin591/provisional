@@ -11,6 +11,8 @@
 		9233252D211F1C8500902CB2 /* RandomApiDtos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9233252C211F1C8500902CB2 /* RandomApiDtos.swift */; };
 		9233252F211F431B00902CB2 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 9233252E211F431B00902CB2 /* Podfile */; };
 		92368893211F947800895325 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92368892211F947800895325 /* DetailViewController.swift */; };
+		923688952120565F00895325 /* NetworkManagement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923688942120565F00895325 /* NetworkManagement.swift */; };
+		923688972120582500895325 /* DownloadRamdomUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923688962120582500895325 /* DownloadRamdomUser.swift */; };
 		926B7876211E143C0057EDA9 /* CustomUICell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926B7875211E143C0057EDA9 /* CustomUICell.swift */; };
 		92F336EE211DC87800D18CC7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F336ED211DC87800D18CC7 /* AppDelegate.swift */; };
 		92F336F0211DC87800D18CC7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F336EF211DC87800D18CC7 /* ViewController.swift */; };
@@ -52,6 +54,8 @@
 		9233252C211F1C8500902CB2 /* RandomApiDtos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomApiDtos.swift; sourceTree = "<group>"; };
 		9233252E211F431B00902CB2 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
 		92368892211F947800895325 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		923688942120565F00895325 /* NetworkManagement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManagement.swift; sourceTree = "<group>"; };
+		923688962120582500895325 /* DownloadRamdomUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadRamdomUser.swift; sourceTree = "<group>"; };
 		926B7875211E143C0057EDA9 /* CustomUICell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomUICell.swift; sourceTree = "<group>"; };
 		92F336EA211DC87800D18CC7 /* RandomUser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RandomUser.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		92F336ED211DC87800D18CC7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -120,6 +124,7 @@
 			isa = PBXGroup;
 			children = (
 				9233252A211F1C5600902CB2 /* Network */,
+				923688942120565F00895325 /* NetworkManagement.swift */,
 			);
 			path = DataLayer;
 			sourceTree = "<group>";
@@ -212,6 +217,7 @@
 			children = (
 				92F3371E211DC8C000D18CC7 /* User.swift */,
 				92F33720211DCAD700D18CC7 /* Location.swift */,
+				923688962120582500895325 /* DownloadRamdomUser.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -441,9 +447,11 @@
 				92F3371F211DC8C000D18CC7 /* User.swift in Sources */,
 				92F336F6211DC87800D18CC7 /* RandomUser.xcdatamodeld in Sources */,
 				9233252D211F1C8500902CB2 /* RandomApiDtos.swift in Sources */,
+				923688952120565F00895325 /* NetworkManagement.swift in Sources */,
 				92F33721211DCAD700D18CC7 /* Location.swift in Sources */,
 				92F336F0211DC87800D18CC7 /* ViewController.swift in Sources */,
 				92F336EE211DC87800D18CC7 /* AppDelegate.swift in Sources */,
+				923688972120582500895325 /* DownloadRamdomUser.swift in Sources */,
 				92368893211F947800895325 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
